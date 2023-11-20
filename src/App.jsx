@@ -1,12 +1,38 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { FaGithub } from "react-icons/fa";
+import { GrPrevious, GrNext } from "react-icons/gr";
 
 function App() {
+
+  const [currentWork, setCurrentWork] = useState(1);
 
   function handleContactScroll() {
     const element = document.getElementById('contact');
     element.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
   }
+
+  function handleBallClick(value) {
+    setCurrentWork(value);
+  }
+
+  function handleArrowClick() {
+    switch (currentWork) {
+      case 1:
+        setCurrentWork(2);
+        break;
+      case 2:
+        setCurrentWork(1);
+        break;
+    }
+  }
+
+  const timer = 5000;
+  useEffect(() => {
+    const change = setInterval(() => {
+      handleArrowClick();
+    }, timer);
+    return () => clearInterval(change);
+  }, [currentWork])
 
   return (
     <>
@@ -58,18 +84,35 @@ function App() {
           <p><a className="second_right_contact" onClick={handleContactScroll}>Contact Me</a>, and let's embark on a collaborative journey to redefine and elevate your digital presence. Together, we'll create web experiences that leave a lasting impact. 🚀</p>
         </div>
       </div>
+      <hr />
       <div className="third">
         <div className="third_left">
-          <div className="third_left_title">
-            <p className='third_left_title_some'></p>
-            <p className="third_left_title_ofmy"></p>
-            <p className="third_left_title_work"></p>
+          <div className="third_right_showcase">
+            <div className={`third_right_showcase_1 ${currentWork == 1 ? 'show' : ""}`}>
+              <a href="https://react-music-player-flax.vercel.app/" target="_blank"><img className="left" src="/MuiscPlayer.png" alt="" /></a>
+              <a href="https://react-local-spotify.vercel.app/" target="_blank" > <img className="right" src="/Spotify PlayerBar.png" alt="" /></a>
+            </div>
+            <div className={`third_right_showcase_2 ${currentWork == 2 ? 'show' : ""}`}>
+              <a target="_blank" href="https://react-weather-page.vercel.app/"><img className="left" src="/WeatherApp.png" alt="" /></a>
+              <a target="_blank" href="https://react-card-quiz.vercel.app/"><img className="right" src="/QuizGame.png" alt="" /></a>
+            </div>
           </div>
-          <div className="third_right">
-            <div className="third_right_showcase"></div>
+          <div className="third_left_balls">
+            <div onClick={() => handleBallClick(1)} className={`third_left_balls_ball ${currentWork == 1 ? 'currentBall' : ""}`}></div>
+            <div onClick={() => handleBallClick(2)} className={`third_left_balls_ball ${currentWork == 2 ? 'currentBall' : ""}`}></div>
+          </div>
+          <GrNext onClick={handleArrowClick} size={'40px'} style={{ right: '20%' }} className="arrows" />
+          <GrPrevious onClick={handleArrowClick} size={'40px'} style={{ left: '20%' }} className="arrows" />
+        </div>
+        <div className="third_right">
+          <div className="third_right_title">
+            <p className='third_right_title_some'>Some</p>
+            <p className="third_right_title_ofmy">of my</p>
+            <p className="third_right_title_work">Work</p>
           </div>
         </div>
       </div>
+      <hr />
       <div id="contact" className="fourth">
         <div className="fourth_left">
           <div className="fourth_left_title">
