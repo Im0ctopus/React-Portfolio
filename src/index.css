@@ -529,3 +529,25 @@ hr {
   bottom: 15%;
   transform: rotate(90deg);
 }
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  margin: 5px;
+  background: #121212;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #b3b3b3;
+  border-radius: 999px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #535353;
+}
