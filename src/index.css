@@ -21,7 +21,7 @@ hr {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
 }
 
@@ -321,6 +321,7 @@ hr {
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
+  color: white;
 }
 
 .second_left_title_me {
@@ -520,6 +521,7 @@ hr {
   justify-content: center;
   align-items: center;
   position: relative;
+  color: #535353;
 }
 
 .third_right_title_ofmy {
@@ -550,4 +552,161 @@ hr {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #535353;
+}
+
+.fourth {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 0;
+  justify-content: center;
+  align-items: center;
+  line-height: 150px;
+}
+
+.fourth_left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  ;
+}
+
+.fourth_left_title {
+  color: white;
+  font-size: 200px;
+  font-weight: 900;
+  position: relative;
+  margin: 10%;
+  margin-top: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+
+.fourth_right_contcs {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.fourth_left_title_me {
+  color: #1db954;
+}
+
+.fourth_right_contcs a {
+  color: white;
+}
+
+.fourth_right_contcs a:hover {
+  transform: translate(0, -5px);
+  color: #1db954 !important;
+}
+
+.fourth_left_title .div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: start;
+  gap: 200px;
+  align-items: center;
+  width: 100%;
+}
+
+.arrow_left {
+  left: 20%;
+}
+
+.arrow_right {
+  right: 20%;
+}
+
+@media only screen and (max-width: 1500px) {
+
+  .second_left,
+  .second_right {
+    margin: 0 5%;
+  }
+
+  .first_left_desc {
+    width: 75%;
+  }
+
+  .third a {
+    width: 75%;
+  }
+
+  .arrow_left {
+    left: 5%;
+  }
+
+  .arrow_right {
+    right: 5%;
+  }
+
+}
+
+@media only screen and (max-width: 1100px) {
+  .first {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+    width: 100%;
+  }
+
+  .second {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .third {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .first_left {
+    width: 100%;
+    padding: 0;
+  }
+
+  .second_right {
+    width: 90%;
+  }
+
+  .third_left {
+    width: 100%;
+  }
+
+  .fourth_left_title {
+    font-size: 80px;
+  }
+
+  .fourth_left_title .div {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .second_left_title {
+    font-size: 80px;
+    margin: 0;
+  }
+
+
+  .third_right_title {
+    font-size: 80px;
+  }
+
+  .third_right_title_ofmy {
+    font-size: 30px;
+  }
 }

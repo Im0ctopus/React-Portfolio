@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { FaGithub } from "react-icons/fa";
 import { GrPrevious, GrNext } from "react-icons/gr";
+import { IoIosMail } from "react-icons/io";
 
 function App() {
 
@@ -101,14 +102,14 @@ function App() {
             <div onClick={() => handleBallClick(1)} className={`third_left_balls_ball ${currentWork == 1 ? 'currentBall' : ""}`}></div>
             <div onClick={() => handleBallClick(2)} className={`third_left_balls_ball ${currentWork == 2 ? 'currentBall' : ""}`}></div>
           </div>
-          <GrNext onClick={handleArrowClick} size={'40px'} style={{ right: '20%' }} className="arrows" />
-          <GrPrevious onClick={handleArrowClick} size={'40px'} style={{ left: '20%' }} className="arrows" />
+          <GrNext onClick={handleArrowClick} size={'40px'} className="arrows arrow_right" />
+          <GrPrevious onClick={handleArrowClick} size={'40px'} className="arrows arrow_left" />
         </div>
         <div className="third_right">
           <div className="third_right_title">
             <p className='third_right_title_some'>Some</p>
             <p className="third_right_title_ofmy">of my</p>
-            <p className="third_right_title_work">Work</p>
+            <p className="third_right_title_work" style={{ color: 'white' }}>Work</p>
           </div>
         </div>
       </div>
@@ -117,11 +118,18 @@ function App() {
         <div className="fourth_left">
           <div className="fourth_left_title">
             <p className="fourth_left_title_contact">Contact</p>
-            <p className="fourth_left_title_me">Me</p>
+            <div className="div">
+              <p className="fourth_left_title_me">Me</p>
+              <div id="contact" className="fourth_right_contcs">
+                <a href="mailto:leoferreira1712@gmail.com" target="_blank">
+                  <IoIosMail size={'100px'} />
+                </a>
+                <a href="https://github.com/Im0ctopus" target="_blank">
+                  <FaGithub size={'100px'} />
+                </a>
+              </div>
+            </div>
           </div>
-        </div>
-        <div className="fourth_right">
-          <div id="contact" className="fourth_right_contcs"></div>
         </div>
       </div>
 
