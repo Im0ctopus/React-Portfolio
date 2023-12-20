@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import { FaGithub } from "react-icons/fa";
 import { GrPrevious, GrNext } from "react-icons/gr";
 import { IoIosMail } from "react-icons/io";
+import { Analytics } from '@vercel/analytics/react';
 
 function App() {
 
@@ -132,7 +133,7 @@ function App() {
           </div>
         </div>
       </div>
-
+      <Analytics />
     </>
   )
 }
